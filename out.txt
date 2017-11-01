@@ -1,0 +1,146 @@
+____125.212.233.133+++24h.com.vn sock: 3
+Connected
+
+
+Reply received
+
+Case: 0
+____125.212.247.3+++24h.com.vn sock: 4
+Connected
+
+res len: 480
+_____0
+res len: -1
+HTTP/1.1 301 Moved Permanently
+Server: 24h.com.vn
+Date: Tue, 31 Oct 2017 18:54:41 GMT
+Content-Type: text/html
+Content-Length: 191
+Location: http://www.24h.com.vn/
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Set-Cookie: SERVERID=m-w7; path=/
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>Website 24h.com.vn</center>
+</body>
+</html>
+
+ok 4
+
+Reply received
+
+Case: 1
+____123.30.134.2+++nhaccuatui.com sock: 5
+Connected
+
+res len: 110
+_____0
+res len: 0
+HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: http://www.nhaccuatui.com/
+Connection: close
+
+ml
+Content-Length: 191
+Location: http://www.24h.com.vn/
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Set-Cookie: SERVERID=m-w7; path=/
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>Website 24h.com.vn</center>
+</body>
+</html>
+
+ok 5
+
+Reply received
+
+Case: 2
+____123.30.215.16+++tuoitre.vn sock: 6
+Connected
+
+res len: 103
+_____0
+res len: 0
+HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: https://tuoitre.vn/
+Connection: close
+
+ose
+
+ml
+Content-Length: 191
+Location: http://www.24h.com.vn/
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Set-Cookie: SERVERID=m-w7; path=/
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>Website 24h.com.vn</center>
+</body>
+</html>
+
+ok 6
+
+Reply received
+
+Case: 3
+____212.193.33.27+++codeforces.com sock: 7
+Connected
+
+
+Reply received
+
+Case: 4
+____222.255.27.168+++genk.vn sock: 8
+Connected
+
+
+Reply received
+
+Case: 5
+____222.255.27.28+++dantri.com.vn sock: 9
+Connected
+
+
+Reply received
+
+Case: 6
+____222.255.27.9+++dantri.com.vn sock: 10
+Connected
+
+
+Reply received
+
+Case: 7
+____222.255.27.22+++dantri.com.vn sock: 11
+Connected
+
+
+Reply received
+
+Case: 8
+____222.255.27.169+++dantri.com.vn sock: 12
+Connected
+
+
+Reply received
+
+Case: 9
+time: 0.002315

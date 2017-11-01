@@ -116,8 +116,62 @@ int recv_timeout(int s , int timeout)
     return total_size;
 }
 
-int main(int argc, char ** argv){
+int recv_to(int fd, char *buffer, int len, int flags, int to) {
 
+   fd_set readset;
+   int result, iof = -1;
+   struct timeval tv;
+
+   // Initialize the set
+   FD_ZERO(&readset);
+   FD_SET(fd, &readset);
+   
+   // Initialize time out struct
+   tv.tv_sec = 0;
+   tv.tv_usec = to * 1000;
+   // select()
+   result = select(fd+1, &readset, NULL, NULL, &tv);
+
+   // Check status
+   if (result < 0)
+      return -1;
+   else if (result > 0 && FD_ISSET(fd, &readset)) {
+      // Set non-blocking mode
+      if ((iof = fcntl(fd, F_GETFL, 0)) != -1)
+         fcntl(fd, F_SETFL, iof | O_NONBLOCK);
+      // receive
+     string res;
+     int i = 0;
+      while (1){
+      	int result_len = recv(fd, buffer, len, flags);
+      	cout << "res len: " << result_len << endl;
+      	if (result_len <= 0)
+      		break;
+      	else
+      		{
+      			res+= buffer;
+      			cout <<"_____" <<i << endl;
+      			++i;
+      		}
+      }
+      //puts(buffer);
+      cout << res << endl;
+      cout << "ok " << fd << endl;
+      memset(buffer,sizeof(buffer),0);
+      // set as before
+      if (iof != -1)
+         fcntl(fd, F_SETFL, iof);
+      return result;
+   }
+   return -2;
+}
+
+int main(int argc, char ** argv){
+	freopen("out.txt","w",stdout);
+	clock_t t;
+	//t = clock();
+	int start_s=clock();
+	
 	int listen_sd, max_sd, new_sd, rc, on = 1;
 
 	char buffer[80000];
@@ -128,7 +182,7 @@ int main(int argc, char ** argv){
 
 	adddata();
 
-	listen_sd = socket(AF_INET, SOCK_STREAM, 0);
+	//listen_sd = socket(AF_INET, SOCK_STREAM, 0);
 	
 	for(int i = 0; i < host.size(); ++i)
 	//for(int i = 0; i < 4; ++i)
@@ -159,7 +213,7 @@ int main(int argc, char ** argv){
 		string mess = "GET / HTTP/1.1\r\nHost: "+ sDomain +"\r\nConnection: keep-alive \r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6)\r\nAccept: */*\r\n\r\n";
 		//string mess = "GET / HTTP/1.1\r\nHost: " + sDomain + "\r\nConnection: close\r\n\r\n";
 
-		cout<< "query:\n"  << mess << endl;
+		//cout<< "query:\n"  << mess << endl;
 
 	    if( send(listen_sd , mess.c_str() , mess.length() , 0) < 0)
 	    {
@@ -167,15 +221,16 @@ int main(int argc, char ** argv){
 	        return 1;
 	    }
 
-	    puts("Data Send\n"); 
+	    //puts("Data Send\n"); 
 
-	    int cout  = 0;
+	    int count  = 0;
 
-	    recv_timeout(listen_sd, 2);
+	    recv_to(listen_sd,buffer,8888,O_NONBLOCK,5);
+	    //recv_timeout(listen_sd, 2);
 	    // while(1)
 	    // {
 	        
-	    //     int received_len = recv(listen_sd, buffer , sizeof(buffer) , 0);
+	    //     int received_len = recv(listen_sd, buffer , 2048 , 0);
 
 	    //     puts(buffer);   
 	    //     cout ++;
@@ -192,7 +247,10 @@ int main(int argc, char ** argv){
     	// }
 
     	puts("\nReply received\n");
+    	cout << "Case: " << i <<  endl;
     	//close(listen_sd);
 	}	
+	int stop_s=clock();
+	cout << "time: " << (stop_s-start_s)/double(CLOCKS_PER_SEC) << endl;
 	return 0;
 }
