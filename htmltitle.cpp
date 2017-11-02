@@ -37,7 +37,7 @@
 #include <string>
 #include <curl/curl.h>
 #include <libxml/HTMLparser.h>
-
+#include <regex>
 #include <time.h>
 //
 //  Case-insensitive string comparison

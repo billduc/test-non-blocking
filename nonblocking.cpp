@@ -57,6 +57,36 @@ void adddata(){
 
 	host.push_back("222.255.27.169");
 	domain.push_back("dantri.com.vn");
+
+	host.push_back("125.212.233.133");
+	domain.push_back("24h.com.vn");
+
+	host.push_back("125.212.247.3");
+	domain.push_back("24h.com.vn");
+
+	host.push_back("123.30.134.2");
+	domain.push_back("nhaccuatui.com");
+
+	host.push_back("123.30.215.16");
+	domain.push_back("tuoitre.vn");
+
+	host.push_back("212.193.33.27");
+	domain.push_back("codeforces.com");
+
+	host.push_back("222.255.27.168");
+	domain.push_back("genk.vn");
+
+	host.push_back("222.255.27.28");
+	domain.push_back("dantri.com.vn");
+
+	host.push_back("222.255.27.9");
+	domain.push_back("dantri.com.vn");
+
+	host.push_back("222.255.27.22");
+	domain.push_back("dantri.com.vn");
+
+	host.push_back("222.255.27.169");
+	domain.push_back("dantri.com.vn");
 }
 
 void set_nonblock(int socket) {
@@ -127,8 +157,8 @@ int recv_to(int fd, char *buffer, int len, int flags, int to) {
    FD_SET(fd, &readset);
    
    // Initialize time out struct
-   tv.tv_sec = 0;
-   tv.tv_usec = to * 1000;
+   tv.tv_sec = 5;
+   tv.tv_usec = 0;
    // select()
    result = select(fd+1, &readset, NULL, NULL, &tv);
 
@@ -167,7 +197,7 @@ int recv_to(int fd, char *buffer, int len, int flags, int to) {
 }
 
 int main(int argc, char ** argv){
-	freopen("out.txt","w",stdout);
+	freopen("out2.txt","w",stdout);
 	clock_t t;
 	//t = clock();
 	int start_s=clock();
@@ -182,14 +212,56 @@ int main(int argc, char ** argv){
 
 	adddata();
 
+	// listen_sd = socket(AF_INET, SOCK_STREAM, 0);
+	// rc = setsockopt(listen_sd, SOL_SOCKET,  SO_REUSEADDR,
+ //                   (char *)&on, sizeof(on));
+	// if (rc < 0)
+	// {
+	//     perror("setsockopt() failed");
+	//     close(listen_sd);
+	//     exit(-1);
+	// }
+
+
+	// rc = ioctl(listen_sd, FIONBIO, (char *)&on);
+ //   	if (rc < 0)
+ //   	{
+ //      	perror("ioctl() failed");
+ //      	close(listen_sd);
+ //      	exit(-1);
+ //   	}   
+
 	//listen_sd = socket(AF_INET, SOCK_STREAM, 0);
-	
-	for(int i = 0; i < host.size(); ++i)
-	//for(int i = 0; i < 4; ++i)
+	int beginsock;
+	//for(int i = 0; i < host.size(); ++i)
+	for(int ii = 0; ii < 1000; ++ii)
 	{
-		listen_sd = socket(AF_INET, SOCK_STREAM, 0);
+		int i = ii % (host.size());
 		
-		cout << "____" << host[i] << "+++" << domain[i] << " sock: " << listen_sd << endl;
+		listen_sd = socket(PF_INET, SOCK_STREAM , 0);
+		fcntl(listen_sd, F_SETFL, O_NONBLOCK);  // set to non-blocking
+		fcntl(listen_sd, F_SETFL, O_ASYNC);     // set to asynchronous I/O
+		if (i == 0)
+			beginsock = listen_sd;
+			// rc = setsockopt(listen_sd, SOL_SOCKET,  SO_REUSEADDR,
+   //                 (char *)&on, sizeof(on));
+		// if (rc < 0)
+		// {
+		//     perror("setsockopt() failed");
+		//     close(listen_sd);
+		//     exit(-1);
+		// }
+
+
+		// rc = ioctl(listen_sd, FIONBIO, (char *)&on);
+	 //   	if (rc < 0)
+	 //   	{
+	 //      	perror("ioctl() failed");
+	 //      	close(listen_sd);
+	 //      	exit(-1);
+	 //   	}   
+		
+		cout << "____" << host[i] << "+++" << domain[i] << " sock: " << listen_sd << " +++++++++++++++++++++++++" << endl;
 		addr.sin_addr.s_addr = inet_addr(host[i].c_str());
 		addr.sin_family = AF_INET;
 		addr.sin_port = htons(80);
@@ -225,18 +297,24 @@ int main(int argc, char ** argv){
 
 	    int count  = 0;
 
-	    recv_to(listen_sd,buffer,8888,O_NONBLOCK,5);
+	    //recv_to(listen_sd,buffer,8888,O_NONBLOCK,5);
 	    //recv_timeout(listen_sd, 2);
 	    // while(1)
 	    // {
 	        
 	    //     int received_len = recv(listen_sd, buffer , 2048 , 0);
 
+	    //     if( received_len == 0 ){
+     //        	puts(" finished");
+     //        	break;
+     //        }
 	    //     puts(buffer);   
-	    //     cout ++;
+	    //     count ++;
+	    //     cout << "++++++++++++++++++" << count << "+++++++++++++++++++++++" << endl;
+	    //     // if (count == 2)
+	    //     // 	break;
 
-	    //     if (cout == 1)
-	    //     	break;
+
 	    //     //fwrite(server_reply , sizeof(server_reply) , 1, file);
 
 	    //     //fwrite(server_reply , received_len , 1, file);
@@ -245,12 +323,39 @@ int main(int argc, char ** argv){
 	    //     //printf("\nReceived byte size = %d\nTotal lenght = %d\n", received_len, total_len);
 	    //     //memset( server_reply, '\0', sizeof(server_reply) );
     	// }
-
+    	cout << "++++++++++++++++++ end sock " << listen_sd << "++++++++++++++++++++++++" << endl;
     	puts("\nReply received\n");
     	cout << "Case: " << i <<  endl;
     	//close(listen_sd);
 	}	
+	cout <<"begin: " << beginsock << " end: " << listen_sd << endl;
+	//cout << F_GETFD() << endl;
+	
 	int stop_s=clock();
-	cout << "time: " << (stop_s-start_s)/double(CLOCKS_PER_SEC) << endl;
+	cout << "**********************time: " << (stop_s-start_s)/double(CLOCKS_PER_SEC) << endl;
+	
+	for(int i = beginsock; i <listen_sd; ++i )
+	{
+		int count  = 0;
+		while(1)
+	    {
+	        
+	        int received_len = recv(i, buffer , 2048 , 0);
+
+	        if( received_len == 0 ){
+            	puts(" finished");
+            	break;
+            }
+	        puts(buffer);   
+	        count ++;
+	        cout << "++++++++++++++++++" << count << "+++++++++++++++++++++++" << endl;
+    		if (count == 5)
+    			break;
+    	}
+    	cout << "@@@@@@@@@@@@@@@@@@@@@@@@@ end " << i << endl;
+    	close(i);
+	
+	}
+
 	return 0;
 }

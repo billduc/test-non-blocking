@@ -1,0 +1,194 @@
+socket fd: 6
+connected
+HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: http://www.nhaccuatui.com/
+Connection: close
+
+
+socket fd: 9
+connected
+HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: https://tuoitre.vn/
+Connection: close
+
+
+socket fd: 12
+Got an error on the connection: Connection refused
+socket fd: 16
+connected
+HTTP/1.1 200 OK
+Date: Thu, 02 Nov 2017 05:02:45 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 121801
+Connection: close
+Cache-Control: private
+Server: openresty
+X-Cache-Status: HIT
+FilterID: ft
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head id="Head1">
+<script>
+// If we have Navigation Timing, make everything relative to navigationStart. Ow, get a time value as early as possible.
+var t_start = (window.performance ? Math.round(performance.timing.navigationStart) : new Date().getTime());
+var t_image, t_after_image;
+
+function send_beacon() {
+var t_onload_handler = t_image - t_start;
+var t_inline_script = t_after_image - t_start;
+var t_custom_metric = Math.max(t_onload_handler, t_inline_script);
+
+(new Image()).src = "//beacon.marathon.mesos.vn/?site=" + window.location.hostname + "&time=" + t_custom_metric + "ms";
+}
+
+if (window.addEventListener) { // W3C standard
+window.addEventListener('load', send_beacon, false);
+}
+else if (window.attachEvent) { // Microsoft
+window.attachEvent('onload', send_beacon);
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Trang thông tin dà
+socket fd: 19
+connected
+HTTP/1.1 200 OK
+Date: Thu, 02 Nov 2017 05:02:46 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Cache-Control: private
+Server: dantri-rl-86
+FilterID: ft
+
+262b
+
+
+
+<!DOCTYPE html>
+
+<!--[if IE 7 ]><html class="ie ie7 lte7 lte8 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 lte8 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html id="html" lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<head id="ctl00_ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Báo Dân trí | Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhật 24h</title><meta name="description" content="Tin tức, sự kiện Việt Nam và quốc tế nhanh, chính xác và cập nhật mới online 24h /7: Xã hội, Pháp luật, Kinh doanh, Giải trí, Thể thao, Đời sống, Sức khỏe, Giáo dục, Công nghệ, Văn hóa, Ôtô, Xe máy, Tình yêu, Giới tính, Nhịp sống trẻ, Chuyện lạ, Blog, Nhân ái, Bạn đọc, Việc làm, dân trí, dantri" /><meta name="keywords" content="Dân trí, dantri, Việt Nam, Vietnam, net, báo, điện tử, vn, express, news, online, báo mạng, trực tuyến, tin tức, sự kiện, mới, nóng, nhanh, hot, video, clip, thời sự, xã hội, đời sống, quốc tế, thế giới, blog, pháp luật, vụ án, lao động, việc làm, kinh tế, kinh doanh, thể thao, bóng đá, tennis, văn hóa, giải trí, showbiz, sao Việt, tình yêu, giới tính, gia đình, chuyện lạ, xe, teen, tư vấn, giao lưu, công nghệ, di động, du học, tuyển sinh, du lịch, nhân ái, từ thiện, iphone, youtube, Trung Quốc, Mỹ, biển Đông" /><meta name="news_keywords" content="Dân trí, dantri, Việt Nam, Vietnam, net, báo, điện tử, vn, e�w�
+socket fd: 22
+connected
+HTTP/1.1 200 OK
+Date: Thu, 02 Nov 2017 05:02:46 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Cache-Control: private
+Server: dantri-rl-86
+FilterID: ft
+
+5aa8
+
+
+
+<!DOCTYPE html>
+
+<!--[if IE 7 ]><html class="ie ie7 lte7 lte8 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 lte8 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html id="html" lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<head id="ctl00_ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Báo Dân trí | Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhật 24h</title><meta name="description" content="Tin tức, sự kiện Việt Nam và quốc tế nhanh, chính xác và cập nhật mới online 24h /7: Xã hội, Pháp luật, Kinh doanh, Giải trí, Thể thao, Đời sống, Sức khỏe, Giáo dục, Công nghệ, Văn hóa, Ôtô, Xe máy, Tình yêu, Giới tính, Nhịp sống trẻ, Chuyện lạ, Blog, Nhân ái, Bạn đọc, Việc làm, dân trí, dantri" /><meta name="keywords" content="Dân trí, dantri, Việt Nam
+socket fd: 25
+connected
+HTTP/1.1 200 OK
+Date: Thu, 02 Nov 2017 05:02:46 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Cache-Control: private
+Server: dantri-rl-86
+FilterID: ft
+
+5aa8
+
+
+
+<!DOCTYPE html>
+
+<!--[if IE 7 ]><html class="ie ie7 lte7 lte8 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 lte8 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html id="html" lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<head id="ctl00_ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Báo Dân trí | Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhật 24h</title><meta name="description" content="Tin tức, sự kiện Việt Nam và quốc tế nhanh, chính xác và cập nhật mới online 24h /7: Xã hội, Pháp luật, Kinh doanh, Giải trí, Thể thao, Đời sống, Sức khỏe, Giáo dục, Công nghệ, Văn hóa, Ôtô, Xe máy, Tình yêu, Giới tính, Nhịp sống trẻ, Chuyện lạ, Blog, Nhân ái, Bạn đọc, Việc làm, dân trí, dantri" /><meta name="keywords" content="Dân trí, dantri, Việt Nam, Vietnam, net, báo, điện tử, vn, express, news, online, báo mạng, trực tuyến, tin tức, sự kiện, mới, nóng, nhanh, hot, video, clip, thời sự, xã hội, đời sống, quốc tế, thế giới, blog, pháp luật, vụ án, lao động, việc làm, kinh tế, kinh doanh, thể thao, bóng đá, tennis, văn hóa, giải trí, showbiz, sao Việt, tình yêu, giới tính, gia đình, chuyện lạ, xe, teen, tư vấn, giao lưu, công nghệ, di động, du học, tuyển sinh, du lịch, nhân ái, từ thiện, iphone, youtube, Trung Quốc, Mỹ, biển Đông" /><meta name="news_keywords" content="Dân trí, dantri, Việt Nam, Vietnam, net, báo, điện tử, vn, e���
+socket fd: 28
+connected
+HTTP/1.1 200 OK
+Date: Thu, 02 Nov 2017 05:02:46 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Cache-Control: private
+Server: dantri-rl-86
+FilterID: ft
+
+262b
+
+
+
+<!DOCTYPE html>
+
+<!--[if IE 7 ]><html class="ie ie7 lte7 lte8 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 lte8 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 lte9" lang="vi" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html id="html" lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<head id="ctl00_ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Báo Dân trí | Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhật 24h</title><meta name="description" content="Tin tức, sự kiện Việt Nam và quốc tế nhanh, chính xác và cập nhật mới online 24h /7: Xã hội, Pháp luật, Kinh doanh, Giải trí, Thể thao, Đời sống, Sức khỏe, Giáo dục, Công nghệ, Văn hóa, Ôtô, Xe máy, Tình yêu, Giới tính, Nhịp sống trẻ, Chuyện lạ, Blog, Nhân ái, Bạn đọc, Việc làm, dân trí, dantri" /><meta name="keywords" content="Dân trí, dantri, Việt Nam, Vietnam, net, báo, điện tử, vn, express, news, online, báo mạng, trực tuyến, tin tức, sự kiện, mới, nóng, nhanh, hot, video, clip, thời sự, xã hội, đời sống, quốc tế, thế giới, blog, pháp luật, vụ án, lao động, việc làm, kinh tế, kinh doanh, thể thao, bóng đá, tennis, văn hóa, giải trí, showbiz, sao Việt, tình yêu, giới tính, gia đình, chuyện lạ, xe, teen, tư vấn, giao lưu, công nghệ, di động, du học, tuyển sinh, du lịch, nhân ái, từ thiện, iphone, youtube, Trung Quốc, Mỹ, biển Đông" /><meta name="news_keywords" content="Dân trí, dantri, Việt Nam, Vietnam, net, báo, điện tử, vn, ep��
+socket fd: 31
+connected
+HTTP/1.1 301 Moved Permanently
+Server: 24h.com.vn
+Date: Thu, 02 Nov 2017 05:02:47 GMT
+Content-Type: text/html
+Content-Length: 191
+Location: http://www.24h.com.vn/
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Set-Cookie: SERVERID=m-w3; path=/
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>Website 24h.com.vn</center>
+</body>
+</html>
+
+socket fd: 34
+connected
+HTTP/1.1 301 Moved Permanently
+Server: 24h.com.vn
+Date: Thu, 02 Nov 2017 05:02:24 GMT
+Content-Type: text/html
+Content-Length: 191
+Location: http://www.24h.com.vn/
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Set-Cookie: SERVERID=m-w5; path=/
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>Website 24h.com.vn</center>
+</body>
+</html>
+
+**********************time: 0.002523
