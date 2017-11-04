@@ -167,21 +167,22 @@ void read_callback(struct bufferevent *bev, void *ctx) {
     // }
     size_t n;
     int c = 0;
-    while (1){
-        n = bufferevent_read(bev, buf, 2048);
+    // while (1){
+        n = bufferevent_read(bev, buf, sizeof(buf));
         if(n > 0) {
             //sleep(5);
+            cout << "________________________________________size: " << n << endl;
             puts(buf);
            
         }
-        cout <<"\n++++++" << c <<"+++++++\n";
-        if (c == 5)
-            {
-                bufferevent_free(bev);
-                break;
-            }
-        c++;
-    }
+        // cout <<"\n++++++" << c <<"+++++++\n";
+        // if (c == 5)
+        //     {
+                 //bufferevent_free(bev);
+        //         break;
+        //     }
+        // c++;
+    //}
     
 }
 

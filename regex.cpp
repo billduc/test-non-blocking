@@ -1,45 +1,55 @@
 #include <iostream>
-#include <string>
 #include <regex>
- 
-int main()
-{
-    // Simple regular expression matching
-    std::string fnames[] = {"foo.txt", "bar.txt", "baz.dat", "zoidberg"};
-    std::regex txt_regex("[a-z]+\\.txt");
- 
-    for (const auto &fname : fnames) {
-        std::cout << fname << ": " << std::regex_match(fname, txt_regex) << '\n';
-    }   
- 
-    // Extraction of a sub-match
-    std::regex base_regex("([a-z]+)\\.txt");
-    std::smatch base_match;
- 
-    for (const auto &fname : fnames) {
-        if (std::regex_match(fname, base_match, base_regex)) {
-            // The first sub_match is the whole string; the next
-            // sub_match is the first parenthesized expression.
-            if (base_match.size() == 2) {
-                std::ssub_match base_sub_match = base_match[1];
-                std::string base = base_sub_match.str();
-                std::cout << fname << " has a base of " << base << '\n';
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+    string str;
+    ifstream file("text.html");
+    string line;
+    if (file.is_open()){
+        while ( getline (file,line) )
+            {
+              //std::cout << line << '\n';
+                str.append(line);
             }
-        }
+        file.close();
     }
- 
-    // Extraction of several sub-matches
-    std::regex pieces_regex("([a-z]+)\\.([a-z]+)");
-    std::smatch pieces_match;
- 
-    for (const auto &fname : fnames) {
-        if (std::regex_match(fname, pieces_match, pieces_regex)) {
-            std::cout << fname << '\n';
-            for (size_t i = 0; i < pieces_match.size(); ++i) {
-                std::ssub_match sub_match = pieces_match[i];
-                std::string piece = sub_match.str();
-                std::cout << "  submatch " << i << ": " << piece << '\n';
-            }   
-        }   
-    }   
+    //cout<< str;
+    // int be = str.find("<title>");
+    // int en = str.find("</title>");
+    // cout<< be <<" " << en << endl; 
+    // string re;
+    // re =  str.substr(be+7,en - be - 7);
+    // cout<< endl << endl << "result: "<< re << endl;
+
+
+     regex e(".*<title>(.*?)</title>.*");
+     regex ee("<title>(.*?)</title>");
+     //bool ok = regex_match(str,e);
+     std::smatch match;
+     string result;
+    if (std::regex_search(str, match, ee) && match.size() > 1) {
+        result = match.str(1);
+    } else {
+        result = std::string("");
+    } 
+    cout << result;
+     bool ok = regex_search(str,e);
+     if (ok)
+        cout << "yes" << endl;
+        else
+        cout << "no" << endl;
+ //    while(1){
+ //        cin >> str;
+ //        //regex e("abc.", regex_constants::icase);
+	// //regex e("abc?");
+	// regex e("abc*");
+ //        //regex e("abc+");
+	// bool match = regex_match(str,e);
+
+ //        cout << (match ? "Matched" : "Not matched") << endl;
+ //    }
 }
